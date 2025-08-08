@@ -2,24 +2,24 @@ let arrayContato = []
 
 
 $(function(){
-    console.log($("#adicionar"))
+    
 
 
     $("#adicionar").on("click", function(){
         let contato = $("#nomeContato").val().trim()
-        let exibirContato = $("#exibeContatos")
     
         if(contato != ""){
             arrayContato.push(contato)
             $("#nomeContato").val("")
-            var $botao = $('<button>', {
-                text: "X",
+            let $li = $("<li>").text(contato)
+            let $botao = $('<button>', {
+                text: "x",
                 click: function(){
-                  $("li").parent().remove()  
+                  $li.remove()  
                 }
             })
-            $("#exibeContatos").append(`<li>${contato}</li>`).append($botao)
-
+            $li.append($botao)
+            $("#exibeContatos").append($li)
 
         } else{
             $("#exibeContatos").html("<p>Informe um Contato<p>")
