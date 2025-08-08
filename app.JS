@@ -22,8 +22,12 @@ $(function(){
             $("#exibeContatos").append($li)
 
         } else{
-            $("#exibeContatos").html("<p>Informe um Contato<p>")
+            $("#aviso").html("<p>Informe um Contato!<p>")
         }
+    })
+
+    $("#exibir").on("click", function(){
+        $("#exibeContatos").toggle()
     })
 
     $("#exibeContatos").on("click", "li", function(){

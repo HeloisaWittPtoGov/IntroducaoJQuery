@@ -11,7 +11,7 @@
             margin: 0;
         }
         .destaque{
-            background-color: white;
+            background-color: white !important;
             color: black;
         }
         #topo{
@@ -33,17 +33,44 @@
             flex-direction: column;
             justify-content: center;
             align-items: baseline;
-            padding: 15px;
+            padding: 15px 0 0 0;
         }
         #contatos p{
             font-size: 25px;
             font-family: Verdana;
             padding: 10px 0 0 0;
+            margin: 10px;
         }
         #contatos ul {
             font-size: 20px;
-            padding: 10px 0 0 ;
+            padding: 10px 0 0 0;
             font-family: Tahoma;   
+            width: 98%;
+            margin: 10px;
+        }
+        #contatos input{
+            margin: 10px;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li button{
+            margin: 0 5px 0 0;
+            background-color: red;
+            color: white;
+            border: none;
+        }
+        li:nth-child(odd){
+            background-color: rgb(108, 136, 108);
+        }
+        li:nth-child(even){
+            background-color:rgb(107, 153, 107); ;
+        }
+        li:hover{
+            border-color: rgb(6, 156, 6);
         }
        
     </style>
@@ -57,7 +84,9 @@
     <div id="contatos">
         <input id="nomeContato" type="text" placeholder="informe o contato">
         <button id="adicionar">Adicionar</button>
+        <button id="exibir"> Exibir Contatos</button>
         <p>Lista de Contatos: </p>
+        <p id="aviso"></p>
         <ul id="exibeContatos"></ul>
     </div>
 </body>
