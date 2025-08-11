@@ -3,8 +3,6 @@ let arrayContato = []
 
 $(function(){
     
-
-
     $("#adicionar").on("click", function(){
         let contato = $("#nomeContato").val().trim()
     
@@ -33,4 +31,16 @@ $(function(){
     $("#exibeContatos").on("click", "li", function(){
         $(this).toggleClass("destaque") 
     })
+
+        $("#filtro").on("keyup", function(){
+            var texto = $(this).val().toUpperCase();
+
+            $("#exibeContatos li").hide()
+
+            .filter(function(){
+               return $(this).text().toUpperCase().indexOf(texto) >= 0
+            })
+
+            .show()
+        })
 })
